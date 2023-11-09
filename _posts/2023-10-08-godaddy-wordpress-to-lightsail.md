@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2023-10-08 12:21:11 -0400
-categories: Wordpress, GoDaddy, Lightsail
+categories: Wordpress
 author: Emma
 ---
 
