@@ -77,7 +77,7 @@ Follow the instructions in B, but on your new Lightsail instance.
 4. Edit the lines that set the `upload_max_filesize` and `post_max_size` variables to be larger than the file size that you downloaded. If you are using vim, you will need to hit the `insert` key to edit the file.
 5. Save and close the file. If you are using vim, you will hit escape, then `:wq`.
 6. Reboot the instance. 
-![Instance Reboot Button](/assets/lightsail_reboot_button.png)
+![Instance Reboot Button](/clear-as-mud/assets/lightsail_reboot_button.png)
 
 ### 6. Import the exported files
 1. Navigate to the plugin on the origin site, by either adding `/wp-admin/admin.php?page=ai1wm_import` to the end of the url or by hovering over All-in-One WP Migration in the left bar and then clicking `Import`.
