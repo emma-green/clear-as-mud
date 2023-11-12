@@ -23,7 +23,7 @@ So, I added the plugin to both the new Lightsail AWS instance, and the old GoDad
 
 The plugin very helpfully had a link for resolving this sort of issue. ([See the page here](https://help.servmask.com/2018/10/27/how-to-increase-maximum-upload-file-size-in-wordpress/)) Of course, I could buy some sort of upgraded version of the plugin. I wasn't going to do that. Or I could contact my hosting provider. I laughed at the idea of trying to contact AWS to ask how to chance my upload file size for a Wordpress Lightsail Container. And option 3 was marked "Hard". It suggested changing the .htaccess file or the wp-config.php file.
 
-Fun fact, the Wordpress image used by Lightsail utilizes Bitnami. And Bitnami does .htaccess files a little differently. ([See here for an explanation from Bitname](https://docs.bitnami.com/aws/infrastructure/lamp/administration/use-htaccess/)) So, I thought I'd go down the wp-config.php route. I added the suggested lines. And nothing.
+Fun fact, the Wordpress image used by Lightsail utilizes Bitnami. And Bitnami does .htaccess files a little differently. ([See here for an explanation from Bitnami](https://docs.bitnami.com/aws/infrastructure/lamp/administration/use-htaccess/)) So, I thought I'd go down the wp-config.php route. I added the suggested lines. And nothing.
 
 At this point, I was fairly frustrated, as you can imagine. But I had a very cute yorkipoo (that's a dog who is part yorkie and part poodle) sound asleep on my lap. And I didn't want to get up and disturb him. So, I pressed on.
 
@@ -46,7 +46,7 @@ grep -Rnw  -e 'upload_max_filesize'
 
 It showed this variable in a php.ini file. The other variable was there too! And they were both set to 80MB. I used vim to edit the file. (`vim stack/php/etc/php.in`). I saved. No change. But then I rebooted the server, and the message about the file size was gone!
 
-From there I was able to import the file I exported from the old Godaddy server. And it worked! The new website looked exactly the same as the old one.
+From there I was able to import the file I exported from the old Godaddy server. And it worked! The new website looked exactly the same as the old one. I changed the settings back to the original (80MB) file upload size and post size.
 
 The next step will be to change the dns and ssl cert to point to the new server. But that's for tomorrow. I've accomplished enough today.
 
@@ -71,13 +71,13 @@ Follow the instructions in B, but on your new Lightsail instance.
 1. Navigate to your instance in AWS Lightsail.
 2. Click `Connect Using SSH` or use your terminal to ssh in.
 
-![SSH Button](image.png)
+![SSH Button](lightsail_ssh_button.png)
 
 3. Open the php.ini file with your favorite terminal text editor. If you want to use vim, the command will look something like this: `vim stack/php/etc/php.in`
 4. Edit the lines that set the `upload_max_filesize` and `post_max_size` variables to be larger than the file size that you downloaded. If you are using vim, you will need to hit the `insert` key to edit the file.
 5. Save and close the file. If you are using vim, you will hit escape, then `:wq`.
 6. Reboot the instance. 
-![Instance Reboot Button](image-1.png)
+![Instance Reboot Button](lightsail_reboot_button.png)
 
 ### 6. Import the exported files
 1. Navigate to the plugin on the origin site, by either adding `/wp-admin/admin.php?page=ai1wm_import` to the end of the url or by hovering over All-in-One WP Migration in the left bar and then clicking `Import`.
