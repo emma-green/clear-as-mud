@@ -22,7 +22,7 @@ title: Clear As Mud
 description: >- # this means to ignore newlines until "baseurl:"
   I'm a software engineer with 10+ years of experience. I'd like to think that
   I've learned enough in that time to share and be helpful to others. Hopefully
-  my descrptions will be more clear than mud!
+  my descriptions will be more clear than mud!
 
 # Build settings
 remote_theme: pages-themes/minimal@v0.2.0
