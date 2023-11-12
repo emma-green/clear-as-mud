@@ -63,11 +63,11 @@ AWS does a much better job of explaining this than I ever will. [Follow steps 1-
 ### C) Install All-in-one WP Migration plugin in new Lightsail instance
 Follow the instructions in B, but on your new Lightsail instance.
 
-### 4. Export using plugin from origin site
+### D) Export using plugin from origin site
 1. Navigate to the plugin on the origin site, by either adding `/wp-admin/admin.php?page=ai1wm_export` to the end of the url or by hovering over All-in-One WP Migration in the left bar and then clicking `Export`.
 2. Click `Export To` and select `File`
 
-### 5. Change the limits for upload_max_filesize and post_max_size in php.ini to bigger than the export
+### E) Change the limits for upload_max_filesize and post_max_size in php.ini to bigger than the export
 1. Navigate to your instance in AWS Lightsail.
 2. Click `Connect Using SSH` or use your terminal to ssh in.
 
@@ -79,7 +79,7 @@ Follow the instructions in B, but on your new Lightsail instance.
 6. Reboot the instance. 
 ![Instance Reboot Button](/clear-as-mud/assets/lightsail_reboot_button.png)
 
-### 6. Import the exported files
+### F) Import the exported files
 1. Navigate to the plugin on the origin site, by either adding `/wp-admin/admin.php?page=ai1wm_import` to the end of the url or by hovering over All-in-One WP Migration in the left bar and then clicking `Import`.
 2. Click `Import From` and select `File`.
 3. Select the file.
